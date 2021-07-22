@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+
+	
+	<!-- load the properties file -->
+	<context:property-placeholder location="sport.properties"/>
+	
+    <!-- Define your beans here -->
+    
+    <!-- Define dependency -->
+    <bean id="fortune" class="bean.HappyFortune">
+    </bean>
+    
+	<bean id="coach" class="bean.BaseballCoach">
+		<constructor-arg ref="fortune"></constructor-arg>
+	</bean>
+	
+	<bean id="cricket" class="bean.CricketCoach">
+		<!-- set up setter injecction -->
+		<property name="fortuneService" ref="fortune"></property>	
+		
+		<!-- inject literal values -->	
+		<property name="age" value="${age}"></property>
+		<property name="email" value="${email}"></property>
+	</bean>
+	
+	<!-- Practice -->
+	<bean id="random" class="practice.RandomFortune">
+    </bean>
+    
+    <bean id="football" class="practice.FootballCoach">
+    	<constructor-arg ref="random"></constructor-arg>
+    	<property name="age" value="55"></property>
+    	<property name="email" value="footbal@mail.com"></property>
+    </bean>
+</beans>
+
+
+
+
+
