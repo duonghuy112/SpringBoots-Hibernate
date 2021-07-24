@@ -34,7 +34,7 @@ public class BadmintonCoach implements Coach{
 
 	@Override
 	public String getDailyWorkout() {
-		return "Bidminton";
+		return "Badminton";
 	}
 	
 	@Override
