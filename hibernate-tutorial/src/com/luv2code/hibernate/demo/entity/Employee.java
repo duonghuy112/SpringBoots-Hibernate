@@ -15,8 +15,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "student")
-public class Student {
+@Table(name = "Employee")
+public class Employee {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -29,13 +29,12 @@ public class Student {
 	@Column(name = "last_name")
 	private String lastName;
 	
-	@Column(name = "email")
-	private String email;
+	@Column(name = "company")
+	private String company;
 
-	public Student(String firstName, String lastName, String email) {
+	public Employee(String firstName, String lastName, String company) {
 		this.firstName = firstName;
 		this.lastName = lastName;
-		this.email = email;
+		this.company = company;
 	}
-	
 }
