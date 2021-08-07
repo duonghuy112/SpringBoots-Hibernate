@@ -15,6 +15,4 @@ public interface CustomerDAO {
 	void save(Customer customer);
 	
 	void remove(int id);
-	
-	List<Customer> sort(String sortby);
 }

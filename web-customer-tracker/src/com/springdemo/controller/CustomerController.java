@@ -1,7 +1,5 @@
 package com.springdemo.controller;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -19,12 +17,11 @@ import com.springdemo.service.CustomerService;
 public class CustomerController {
 	
 	@Autowired
-	private static CustomerService customerService;
+	private CustomerService customerService;
 
 	@GetMapping("/list")
 	public String listCustomers(Model model) {
-		List<Customer> customers = customerService.getAll();
-		model.addAttribute("customers", customers);
+		model.addAttribute("customers", customerService.getAll());
 		return "list-customers";
 	}
 	

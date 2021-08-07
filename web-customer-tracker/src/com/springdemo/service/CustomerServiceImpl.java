@@ -44,11 +44,4 @@ public class CustomerServiceImpl implements CustomerService {
 	public void remove(int id) {
 		customerDAO.remove(id);
 	}
-	
-	@Transactional
-	@Override
-	public List<Customer> sort(String sortBy) {
-		return customerDAO.sort(sortBy);
-	}
-
 }

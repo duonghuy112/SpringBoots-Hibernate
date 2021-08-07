@@ -15,6 +15,4 @@ public interface CustomerService {
 	void save(Customer customer);
 	
 	void remove(int id);
-	
-	List<Customer> sort(String sortBy);
 }

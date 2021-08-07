@@ -54,13 +54,4 @@ public class CustomerDAOImpl implements CustomerDAO{
 	public void remove(int id) {
 		factory.getCurrentSession().delete(get(id));
 	}
-	
-	@Override
-	public List<Customer> sort(String sortBy) {
-		return factory.getCurrentSession()
-				  .createQuery("from Customer order by :sortBy", Customer.class)
-				  .setParameter("sortBy", sortBy, StandardBasicTypes.STRING)
-				  .getResultList();
-	}
-
 }
